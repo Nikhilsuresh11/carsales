@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-container">
+    <h1 style="font-family: 'Open Sans', sans-serif; color: #333;">Dataset Input</h1>
+
+    <form id="datasetForm" method="get" action="{% url 'result' %}">
+        <!-- Categorical Variable Dropdowns -->
+        <div class="form-group">
+            <label for="fuelType">Fuel Type:</label>
+            <select id="fuelType" name="fuelType">
+                <option value="Diesel">Diesel</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Electric">Electric</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ownerType">Owner Type:</label>
+            <select id="ownerType" name="ownerType">
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth & Above">Fourth & Above</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <!-- Continuous Variable Sliders -->
+        <div class="form-group">
+            <label for="mileage">Mileage (KM):</label>
+            <input type="range" id="mileage" name="mileage" min="0" max="30" step="0.1" value="10" style="background: linear-gradient(to right, #4caf50, #333);">
+            <output for="mileage" id="mileageValue">10</output>
+        </div>
+
+        <div class="form-group">
+            <label for="mileage">Mileage (KM):</label>
+            <input type="range" id="mileage" name="mileage" min="0" max="30" step="0.1" value="10">
+            <output for="mileage" id="mileageValue">10</output>
+        </div>
+
+        <div class="form-group">
+            <label for="engine">Engine (CC):</label>
+            <input type="range" id="engine" name="engine" min="100" max="2000" step="1" value="1000">
+            <output for="engine" id="engineValue">1000</output>
+        </div>
+
+        <div class="form-group">
+            <label for="power">Power (bhp):</label>
+            <input type="range" id="power" name="power" min="50" max="500" step="0.1" value="200">
+            <output for="power" id="powerValue">200</output>
+        </div>
+
+        <div class="form-group">
+            <label for="seats">Seats:</label>
+            <input type="range" id="seats" name="seats" min="1" max="10" step="1" value="5">
+            <output for="seats" id="seatsValue">5</output>
+        </div>
+
+        <div>
+            <label for="name">Name:</label>
+            <select id="name" name="name">
+                <option value="Ambassador">Ambassador</option>
+                <option value="Audi">Audi</option>
+                <option value="Bentley">Bentley</option>
+                <option value="BMW">BMW</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Datsun">Datsun</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Force">Force</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hyundai" selected>Hyundai</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Land">Land</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Maruti">Maruti</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Mini">Mini</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Renault">Renault</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Tata">Tata</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Volvo">Volvo</option>
+            </select>
+        </div>
+    
+    
+        <div>
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="Pune" selected>Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" min="1900" max="2023" placeholder="2015">
+        </div>
+
+        <div class="form-group">
+            <label for="kilometersDriven">Kilometers Driven:</label>
+            <input type="range" id="kilometersDriven" name="kilometersDriven" min="0" max="100000" step="1000" value="41000">
+            <output for="kilometersDriven" id="kilometersDrivenValue">41000</output>
+        </div>
+
+        <!-- Button to submit the form -->
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to bottom, #3498db, #2c3e50);
+        font-family: 'Open Sans', sans-serif;
+        color: #ecf0f1;
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(to right, #ecf0f1, #3498db);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="range"] {
+        width: 50%;
+        margin-top: 5px;
+        background: linear-gradient(to right, #4caf50, #333);
+    }
+
+    output {
+        display: block;
+        margin-top: 8px;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+{% endblock %}

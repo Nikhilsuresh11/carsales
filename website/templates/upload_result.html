@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+<div class="result-container">
+    <h1>Submitted Information</h1>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/uploadresult.css' %}">
+
+
+    <p><strong>Full Name:</strong> {{ full_name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Mobile Number:</strong> {{ mobile_number }}</p>
+    <p><strong>Car Model:</strong> {{ car_model }}</p>
+    <p><strong>Car Year:</strong> {{ car_year }}</p>
+    <p><strong>Car Mileage:</strong> {{ mileage }}</p>
+    <p><strong>Kilometers Driven:</strong> {{ kilometers_driven }}</p>
+
+    <!-- Display uploaded images -->
+    {% if person_image %}
+        <p><strong>Person Image:</strong></p>
+        <img src="{{ person_image.url }}" alt="Person Image">
+    {% endif %}
+
+    {% if car_image %}
+        <p><strong>Car Image:</strong></p>
+        <img src="{{ car_image.url }}" alt="Car Image">
+    {% endif %}
+
+    <!-- Add more fields as needed -->
+    <button class="back-button" onclick="window.location.href = '{% url 'home' %}'">Back to Home</button>
+
+</div>
+{% endblock %}

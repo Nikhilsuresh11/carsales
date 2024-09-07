@@ -1,0 +1,66 @@
+.form-container {
+  padding: 20px;
+  background-color: #ffffff; /* Background color of the form container */
+}
+
+.form-container h1 {
+  font-family: 'Open Sans', sans-serif;
+  color: #272525; /* Color of the heading */
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #272525; /* Color of the label */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="file"]:focus {
+  outline: none;
+  border-color: #007bff; /* Color of border on focus */
+}
+
+.form-group button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Background color of the submit button */
+  color: #ffffff; /* Text color of the submit button */
+  cursor: pointer;
+}
+
+.form-group button[type="submit"]:hover {
+  background-color: #0056b3; /* Background color of the submit button on hover */
+}
+
+/* Styling for error messages */
+.error-message {
+  color: #ff0000; /* Color of error message */
+  font-size: 14px;
+}

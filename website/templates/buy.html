@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+<div class="sell-container">
+    <h1 style="font-family: 'Open Sans', sans-serif; color: #272525;">List of Cars for Sale</h1>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/buy.css' %}">
+
+    {% if uploaded_forms %}
+    <div class="car-list">
+        {% for form in uploaded_forms %}
+        <div class="car-info">
+            <h2>{{ form.full_name }}</h2>
+            <p>Email: {{ form.email }}</p>
+            <p>Mobile Number: {{ form.mobile_number }}</p>
+            <p>Car Model: {{ form.car_model }}</p>
+            <p>Car Year: {{ form.car_year }}</p>
+            <p>Car Mileage: {{ form.mileage }}</p>
+            <p>Kilometers Driven: {{ form.kilometers_driven }}</p>
+            <div class="image-container">
+                {% if form.person_image %}
+                    <img src="{{ form.person_image.url }}" alt="Person Image">
+                {% else %}
+                    <p>No person image available</p>
+                {% endif %}
+                {% if form.car_image %}
+                    <img src="{{ form.car_image.url }}" alt="Car Image">
+                {% else %}
+                    <p>No car image available</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No cars available for sale.</p>
+    {% endif %}
+</div>
+{% endblock %}

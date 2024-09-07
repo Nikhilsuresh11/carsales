@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyIxLAAZ9eAab7fR/1QGGh5u12wnQIp5N"
+        crossorigin="anonymous">
+    <style>
+        body {
+            background: #000000;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 0 1rem;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .navbar__menu {
+            position: relative;
+            display: flex;
+        }
+
+        .navbar__link {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+            justify-content: center;
+            height: 3.5rem;
+            width: 10rem;
+            color: #fff;
+            transition: 250ms ease all;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 500ms ease all;
+        }
+
+        .navbar__link:hover {
+            svg {
+                stroke: #C4151C;
+            }
+        }
+
+        .navbar__item:last-child:before {
+            content: '';
+            position: absolute;
+            left: -8rem;
+            margin-left: 5rem;
+            bottom: -1.25rem;
+            height: 0.5rem;
+            width: 2px;
+            background: #C4151C;
+            box-shadow: 0 -0.5rem #C4151C, 0 -0.5rem #C4151C, 0 3rem 0.5rem #fff, 2rem 0 #fff, -3rem 0 0.5rem #fff;
+            transition: 500ms ease all;
+        }
+
+        .navbar__item:first-child:nth-last-child(2):hover,
+        .navbar__item:first-child:nth-last-child(2)~li:hover,
+        .navbar__item:first-child:nth-last-child(2)~li:last-child:hover:before {
+            left: 0%;
+        }
+
+        .navbar__item:first-child:nth-last-child(3):hover,
+        .navbar__item:first-child:nth-last-child(3)~li:hover,
+        .navbar__item:first-child:nth-last-child(3)~li:last-child:hover:before {
+            left: 50%;
+        }
+
+        .navbar__item:first-child:nth-last-child(4):hover,
+        .navbar__item:first-child:nth-last-child(4)~li:hover,
+        .navbar__item:first-child:nth-last-child(4)~li:last-child:hover:before {
+            left: 33.3333%;
+        }
+
+        /* Add similar rules for other numbers of items as needed */
+    </style>
+    <title>Custom Navbar</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header__logo">
+            <strong>CAR BOLO</strong>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'upload' %}">Upload</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'buy' %}">Buy</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    
+
+</body>
+
+</html>

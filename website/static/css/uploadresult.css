@@ -1,0 +1,41 @@
+body {
+    background-color: #f0f0f0; /* Set background color to grey */
+}
+
+.result-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff; /* Set background color of the result container to white */
+}
+
+.result-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.result-container p {
+    margin: 10px 0;
+}
+
+.result-container img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.back-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}

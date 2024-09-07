@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block content %}
+
+    <div class="result-container">
+        <h1>Form Result</h1>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
+
+        <div class="result-box">
+            <p><strong>Fuel Type:</strong> {{ fuel_type }}</p>
+            <p><strong>Transmission:</strong> {{ transmission }}</p>
+            <p><strong>Owner Type:</strong> {{ owner_type }}</p>
+            <p><strong>Mileage:</strong> {{ mileage }}</p>
+            <p><strong>Engine:</strong> {{ engine }}</p>
+            <p><strong>Power:</strong> {{ power }}</p>
+            <p><strong>Seats:</strong> {{ seats }}</p>
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Year:</strong> {{ year }}</p>
+            <p><strong>Kilometers Driven:</strong> {{ kilometers_driven }}</p>
+            <p><strong>Predicted Price:</strong> {{ predicted_price }}</p>
+        </div>
+
+        <button class="back-button" onclick="window.location.href = '{% url 'home' %}'">Back to Home</button>
+    </div>
+
+    <style>
+        .result-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .back-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+{% endblock %}

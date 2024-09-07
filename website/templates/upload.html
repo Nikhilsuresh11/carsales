@@ -1,0 +1,65 @@
+<head>
+    {% extends 'base.html' %}
+    {% load static %} 
+</head>
+
+{% block content %}
+<div class="form-container">
+    <h1 style="font-family: 'Open Sans', sans-serif; color: #272525;">Person and Car Information</h1>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/upload.css' %}">
+
+    <form id="personCarForm" method="post" action="{% url 'upload_result' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required pattern="[0-9]{10}" title="Please enter a 10-digit mobile number">
+            </div>
+
+            <div class="form-group">
+                <label for="carModel">Car Model:</label>
+                <input type="text" id="carModel" name="carModel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="carYear">Car Year:</label>
+                <input type="number" id="carYear" name="carYear" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mileage">Car Mileage:</label>
+                <input type="number" id="mileage" name="mileage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="kilometersDriven">Kilometers Driven:</label>
+                <input type="number" id="kilometersDriven" name="kilometersDriven" required>
+            </div>
+
+            <div class="form-group">
+                <label for="personImage">Upload Person Image:</label>
+                <input type="file" id="personImage" name="personImage" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="carImage">Upload Car Image:</label>
+                <input type="file" id="carImage" name="carImage" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
